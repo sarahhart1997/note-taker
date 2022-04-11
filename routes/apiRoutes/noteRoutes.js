@@ -25,7 +25,7 @@ router.post('/notes', (req, res) => {
         if (error) throw (error);
         // turn JSON into an object
         let currentNotes = JSON.parse(data);
-        // push complete note into current notes container
+        // push complete note into current notes
         currentNotes.push(completeNote);
         // turn object back into JSON
         fs.writeFile('./db/db.json', JSON.stringify(currentNotes), (error) => {
